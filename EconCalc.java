@@ -11,6 +11,16 @@ public class EconCalc
       System.out.println("Enter the size of the matrix: ");
       matrixSize = userInput.nextInt();
 
+      //Stores the names of the goods.
+      String[] names = new String[matrixSize];
+
+      System.out.println("Enter the names of the goods: ");
+      for(int i = 0; i < matrixSize; i++)
+      {
+         names[i] = userInput.next();
+      }
+
+
       //Stores the input matrix, the size of which depends on previous variable.
       double[][] inputMatrix = new double[matrixSize][matrixSize];
 
@@ -48,7 +58,7 @@ public class EconCalc
       System.out.println("The production matrix is: ");
       for (int i = 0; i < matrixSize; i++)
       {
-         System.out.println(productionMatrix[i]);
+         System.out.println(names[i] + ": " + productionMatrix[i]);
       }
 
       userInput.close();
