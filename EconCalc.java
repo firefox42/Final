@@ -200,11 +200,8 @@ public class EconCalc
          for (int i = j + 1; i < matrixSize; ++i)  
          {
             double pivotJ = inputMatrix[index[i]][j] / inputMatrix[index[j]][j];
-
-            // Record pivoting ratios below the diagonal
             inputMatrix[index[i]][j] = pivotJ;
 
-            // Modify other elements accordingly
             for (int l = j + 1; l < matrixSize; ++l)
             {
                inputMatrix[index[i]][l] -= pivotJ * inputMatrix[index[j]][l];
