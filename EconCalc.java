@@ -1,12 +1,27 @@
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class EconCalc
 {
-   public static void main(String[] args)
+   public static void main(String[] args) throws FileNotFoundException
    {
-      //Takes in a value that defines the size of a square matrix.
-      int matrixSize;
+      //Gets filename from user.
       Scanner userInput = new Scanner(System.in);
+
+      System.out.println("Enter the filename: ");
+      String fileName = userInput.nextLine();
+      
+      userInput.close();
+
+      //Opens the file
+      Scanner inputFile = new Scanner(new File(filename));
+
+      //Takes in a value that defines the size of a square matrix.
+      int matrixSize = inputFile.nextInt();
+
+      /*
+      int matrixSize;
 
       System.out.println("Enter the size of the matrix: ");
       matrixSize = userInput.nextInt();
@@ -44,6 +59,7 @@ public class EconCalc
       {
          demandMatrix[i] = userInput.nextDouble();
       }
+      */
 
       //Subtracts the an identity matrix by the input matrix.
       double[][] subMatrix = subtract(inputMatrix, matrixSize);
@@ -61,7 +77,6 @@ public class EconCalc
          System.out.println(names[i] + ": " + productionMatrix[i]);
       }
 
-      userInput.close();
    }
 
    //Subtracts the an identity matrix by the input matrix.
