@@ -15,51 +15,31 @@ public class EconCalc
       userInput.close();
 
       //Opens the file
-      Scanner inputFile = new Scanner(new File(filename));
+      Scanner inputFile = new Scanner(new File(fileName));
+      inputFile.useDelimiter(",|\n");
 
       //Takes in a value that defines the size of a square matrix.
-      int matrixSize = inputFile.nextInt();
+      int matrixSize = Integer.parseInt(inputFile.next());
 
-      /*
-      int matrixSize;
-
-      System.out.println("Enter the size of the matrix: ");
-      matrixSize = userInput.nextInt();
-
-      //Stores the names of the goods.
+      //Creates arrays to store values from file.
+      double[][] inputMatrix = new double[matrixSize][matrixSize];
+      double[] demandMatrix = new double[matrixSize];
       String[] names = new String[matrixSize];
 
-      System.out.println("Enter the names of the goods: ");
-      for(int i = 0; i < matrixSize; i++)
+      //Begins parsing of file, line by line.
+      for (int i = 0; i < matrixSize; i++)
       {
-         names[i] = userInput.next();
-      }
+         names[i] = inputFile.next();
 
-
-      //Stores the input matrix, the size of which depends on previous variable.
-      double[][] inputMatrix = new double[matrixSize][matrixSize];
-
-      System.out.println("Enter the elements of the input matrix: ");
-
-      for(int i = 0; i < matrixSize; i++)
-      {
-         for(int j = 0; j < matrixSize; j++)
+         for (int j = 0; j < matrixSize; j++)
          {
-            inputMatrix[i][j] = userInput.nextDouble();
+            inputMatrix[i][j] = Double.parseDouble(inputFile.next());
          }
 
+         demandMatrix[i] = Double.parseDouble(inputFile.next());
       }
 
-      //Stores the demand matrix.
-      double[] demandMatrix = new double[matrixSize];
-
-      System.out.println("Enter the elements of the demand matrix: ");
-
-      for(int i = 0; i < matrixSize; i++)
-      {
-         demandMatrix[i] = userInput.nextDouble();
-      }
-      */
+      inputFile.close();
 
       //Subtracts the an identity matrix by the input matrix.
       double[][] subMatrix = subtract(inputMatrix, matrixSize);
