@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.root.econcalc.MainActivity"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+    <EditText
+        android:id="@+id/PathInput"
+        android:layout_width="220dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:ems="10"
+        android:hint="@string/edit_path"
+        android:inputType="textPersonName"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/CalculateButton"
+        tools:layout_editor_absoluteY="16dp"
+        android:layout_marginStart="16dp" />
+
+    <Button
+        android:id="@+id/CalculateButton"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/button_calc"
+        android:textSize="10sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/PathInput"
+        app:layout_constraintLeft_toRightOf="@+id/PathInput"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <TextView
+        android:id="@+id/MatrixOutput"
+        android:layout_width="340dp"
+        android:layout_height="340dp"
+        android:layout_marginTop="2dp"
+        android:elevation="1dp"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/PathInput"
+        tools:layout_editor_absoluteX="22dp" />
+
+    <Button
+        android:id="@+id/ImageButton"
+        android:layout_width="113dp"
+        android:layout_height="48dp"
+        android:text="@string/button_image"
+        tools:layout_editor_absoluteX="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/MatrixOutput" />
+
+    <Button
+        android:id="@+id/FileButton"
+        android:layout_width="101dp"
+        android:layout_height="49dp"
+        android:text="@string/button_file"
+        app:layout_constraintLeft_toRightOf="@+id/ImageButton"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/MatrixOutput" />
+</android.support.constraint.ConstraintLayout>

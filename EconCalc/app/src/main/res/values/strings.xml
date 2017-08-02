@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EconCalc</string>
+    <string name="edit_path">Enter the path of a .CSV</string>
+    <string name="button_calc">Calculate</string>
+    <string name="button_image">Save image</string>
+    <string name="button_file">Save file</string>
+</resources>
